@@ -5,43 +5,41 @@ import { useNavigate } from "react-router-dom";
 
 export default function Createpost() {
   const [body, setBody] = useState("");
-    const [image, setImage] = useState("")
-      const [url, setUrl] = useState("")
-        const navigate = useNavigate()
+  const [image, setImage] = useState("")
+  const [url, setUrl] = useState("")
+  const navigate = useNavigate()
 
-          // Toast functions
-            const notifyA = (msg) => toast.error(msg)
-              const notifyB = (msg) => toast.success(msg)
+// Toast functions
+  const notifyA = (msg) => toast.error(msg)
+  const notifyB = (msg) => toast.success(msg)
 
 
-                useEffect(() => {
+  useEffect(() => {
 
-                    // saving post to mongodb
-                        if (url) {
+        // saving post to mongodb
+        if (url) {
 
-                              fetch("http://localhost:5000/createPost", {
-                                      method: "post",
-                                              headers: {
-                                                        "Content-Type": "application/json",
-                                                                  "Authorization": "Bearer " + localStorage.getItem("jwt")
-                                                                          },
-                                                                                  body: JSON.stringify({
-                                                                                            body,
-                                                                                                      pic: url
-                                                                                                              })
-                                                                                                                    }).then(res => res.json())
-                                                                                                                            .then(data => {
-                                                                                                                                      if (data.error) {
-                                                                                                                                                  notifyA(data.error)
-                                                                                                                                                            } else {
-                                                                                                                                                                        notifyB("Successfully Posted")
-                                                                                                                                                                                    navigate("/")
-                                                                                                                                                                                              }
-                                                                                                                                                                                                      })
-                                                                                                                                                                                                              .catch(err => console.log(err))
-                                                                                                                                                                                                                  }
-
-                                                                                                                                                                                                                    }, [url])
+                fetch("http://localhost:5000/createPost", {
+                         method: "post",
+                         headers: {
+                           "Content-Type": "application/json",
+                           "Authorization": "Bearer " + localStorage.getItem("jwt")
+                        },
+                body: JSON.stringify({
+                        body,
+                        pic: url
+                  })
+                }).then(res => res.json())                                                                                     .then(data => {
+                        if (data.error) {
+                            notifyA(data.error)
+                        } else {
+                            notifyB("Successfully Posted")
+                            navigate("/")
+                        }
+                     })
+                .catch(err => console.log(err))
+           }
+        }, [url])
 
 
                                                                                                                                                                                                                       // posting image to cloudinary
