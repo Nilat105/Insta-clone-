@@ -40,4 +40,4 @@ export default function Modal({ setModalOpen }) {
       </div>
     </div>
   );
-  }                                                                                                                                                                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                                                                                                                                                          }

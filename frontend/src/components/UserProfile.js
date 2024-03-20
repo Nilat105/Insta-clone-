@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            }import React, { useEffect, useState } from "react";
-import PostDetail from "./PostDetail";
+import React, { useEffect, useState } from "react";                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
 import "./Profile.css";
 import { useParams } from "react-router-dom";
 
@@ -69,7 +68,7 @@ export default function UserProfie() {
           setIsFollow(true);
         }
       });
-  }, [isFollow]);
+  },);
 
   return (
     <div className="profile">
@@ -137,4 +136,4 @@ export default function UserProfie() {
       } */}
     </div>
   );
-          }
+    } 

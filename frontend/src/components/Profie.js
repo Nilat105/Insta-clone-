@@ -43,7 +43,7 @@ export default function Profie() {
         setUser(result.user)
         console.log(pic);
       });
-  }, []);
+  }, );
 
   return (
     <div className="profile">
@@ -94,4 +94,4 @@ export default function Profie() {
       }
     </div>
   );
-}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 }
