@@ -79,6 +79,7 @@ export default function Profie() {
       <div className="gallery">
         {pic.map((pics) => {
           return <img key={pics._id} src={pics.photo}
+            alt=""
             onClick={() => {
               toggleDetails(pics)
             }}

@@ -50,12 +50,12 @@ export default function ProfilePic({ changeprofile }) {
     if (image) {
       postDetails();
     }
-  }, [image]);
+  },);
   useEffect(() => {
     if (url) {
       postPic();
     }
-  }, [url]);
+  },);
   return (
     <div className="profilePic darkBg">
       <div className="changePic centered">

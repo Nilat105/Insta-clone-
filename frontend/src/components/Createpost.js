@@ -41,7 +41,7 @@ export default function Createpost() {
         .catch(err => console.log(err))
     }
 
-  }, [url])
+  }, )
 
 
   // posting image to cloudinary
@@ -80,9 +80,10 @@ export default function Createpost() {
       {/* image preview */}
       <div className="main-div">
         <img
-          id="output"
+          id= "output"
+          alt=""
           src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-image-512.png"
-        />
+      />
         <input
           type="file"
           accept="image/*"

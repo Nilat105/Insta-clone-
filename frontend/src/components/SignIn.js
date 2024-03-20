@@ -15,9 +15,9 @@ export default function SignIn() {
   const notifyA = (msg) => toast.error(msg)
   const notifyB = (msg) => toast.success(msg)
 
-  const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  const emailRegex = 
 
-  const postData = () => {
+  
     //checking email
     if (!emailRegex.test(email)) {
       notifyA("Invalid email")
@@ -80,4 +80,4 @@ export default function SignIn() {
       </div>
     </div>
   );
-  }
+  

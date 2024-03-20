@@ -13,7 +13,7 @@ export default function Home() {
   const [item, setItem] = useState([]);
 
   // Toast functions
-  const notifyA = (msg) => toast.error(msg);
+  
   const notifyB = (msg) => toast.success(msg);
 
   useEffect(() => {
@@ -34,7 +34,7 @@ export default function Home() {
         setData(result);
       })
       .catch((err) => console.log(err));
-  }, []);
+  },);
 
   // to show and hide comments
   const toggleComment = (posts) => {
@@ -60,7 +60,7 @@ export default function Home() {
       .then((res) => res.json())
       .then((result) => {
         const newData = data.map((posts) => {
-          if (posts._id == result._id) {
+          if (posts._id === result._id) {
             return result;
           } else {
             return posts;
@@ -84,7 +84,7 @@ export default function Home() {
       .then((res) => res.json())
       .then((result) => {
         const newData = data.map((posts) => {
-          if (posts._id == result._id) {
+          if (posts._id === result._id) {
             return result;
           } else {
             return posts;
@@ -111,7 +111,7 @@ export default function Home() {
       .then((res) => res.json())
       .then((result) => {
         const newData = data.map((posts) => {
-          if (posts._id == result._id) {
+          if (posts._id === result._id) {
             return result;
           } else {
             return posts;
